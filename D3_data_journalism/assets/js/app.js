@@ -195,5 +195,11 @@ d3.csv("assets/data/data.csv").then(function(data, err) {
         .enter()
         .append("g");
 
-    
+    var circles = circlesGroup.append("circle")
+        .attr("cx", d => xLinearScale(d[chosenXaxis]))
+        .attr("cy", d => yLinearScale(d[chosenYaxis]))
+        .attr("r", 15)
+        .classed("stateCircle", true);
+
+    var circlesText
 })
