@@ -22,3 +22,15 @@ const svg = d3.select("#scatter")
 const chartGroup = svg.append("g")
     .attr("transform", `translate(${margin.left}, ${margin.top})`);
 
+var chosenXaxis = "poverty";
+var chosenYaxis = "healthcare";
+
+function xScale(data, chosenXaxis) {
+
+    var xLinearScale = d3.scaleLinear()
+        .domain([d3.min(data, d => d[chosenXaxis]) * 0.9,
+    d3.max(data, d => d[chosenXaxis]) * 1.1
+    ]).range([0, width]);
+
+    return xLinearScale;
+}
