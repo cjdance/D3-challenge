@@ -66,7 +66,7 @@ function renderYaxes(newYScale, yAxis) {
         return yAxis;
 }
 
-function renderXCircles(circlesGroup, newXScale, chosenXAxis) {
+function renderXCircles(circlesGroup, newXScale, chosenXaxis) {
 
     circlesGroup.transition()
         .duration(1000)
@@ -86,11 +86,20 @@ function renderYCircles(circlesGroup, newYScale, chosenYaxis) {
     return circlesGroup;
 }
 
-function renderXText(circlesGroup, newXScale, chosenXAxis) {
+function renderXText(circlesGroup, newXScale, chosenXaxis) {
 
     circlesGroup.transition()
         .duration(1000)
         .attr("dx", d => newXScale(d[chosenXaxis]));
+
+    return circlesGroup;
+}
+
+function renderYText(circlesGroup, newYScale, chosenYaxis) {
+
+    circlesGroup.transition()
+        .duration(1000)
+        .attr("dy", d => newYScale(d[chosenYaxis])+5);
 
     return circlesGroup;
 }
