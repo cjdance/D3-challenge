@@ -65,3 +65,15 @@ function renderYaxes(newYScale, yAxis) {
 
         return yAxis;
 }
+
+function renderXCircles(circlesGroup, newXScale, chosenXAxis) {
+
+    circlesGroup.transition()
+        .duration(1000)
+        .attr("cx", d => newXScale(d[chosenXaxis]))
+        .attr("dx", d => newXScale(d[chosenXaxis]));
+
+    return circlesGroup;
+}
+
+function renderYCircles
