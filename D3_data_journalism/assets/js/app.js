@@ -142,4 +142,16 @@ function updateToolTip(chosenXaxis, chosenYaxis, circlesGroup) {
         .html(function(d) {
             return (`${d.state}<br>${xlabel + d[chosenXaxis]}%<br>${ylabel + d[chosenYaxis]}%`);
         });
-})
+
+    circlesGroup.call(toolTip);
+
+    circlesGroup.on("mouseover", function(data) {
+        toolTip.show(data);
+    });
+
+    circlesGroup.on("mouseout", function(data) {
+        toolTip.hide(data);
+    });
+
+    return circlesGroup;
+}
