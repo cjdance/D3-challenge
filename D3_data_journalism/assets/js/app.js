@@ -103,3 +103,30 @@ function renderYText(circlesGroup, newYScale, chosenYaxis) {
 
     return circlesGroup;
 }
+
+
+function updateToolTip(chosenXaxis, chosenYaxis, circlesGroup) {
+
+    var xlabel;
+    var ylabel;
+
+    if (chosenXaxis === "poverty") {
+        xlabel = "Poverty: ";
+    }
+    else if (chosenXaxis === "age") {
+        xlabel = "Age: ";
+    }
+    else if (chosenXaxis === "income") {
+        xlabel = "Household Income: ";
+    }
+
+    if (chosenYaxis === "healthcare") {
+        ylabel = "Healthcare: ";
+    }
+    else if (chosenYaxis === "obesity") {
+        ylabel = "Obesity: ";
+    }
+    else if (chosenYaxis === "smokes") {
+        ylabel = "Smokes: ";
+    }
+})
