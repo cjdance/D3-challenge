@@ -47,7 +47,7 @@ function yScale(data, chosenYaxis) {
 
 
 function renderXaxes(newXScale, xAxis) {
-    var bopttomAxis = d3.axisBottom(newXScale);
+    var bottomAxis = d3.axisBottom(newXScale);
 
     xAxis.transition()
         .duration(1000)
@@ -56,3 +56,12 @@ function renderXaxes(newXScale, xAxis) {
         return xAxis;
 }
 
+function renderYaxes(newYScale, yAxis) {
+    var leftAxis = d3.axisLeft(newYScale);
+
+    yAxis.transition()
+        .duration(1000)
+        .call(leftAxis);
+
+        return yAxis;
+}
