@@ -201,5 +201,9 @@ d3.csv("assets/data/data.csv").then(function(data, err) {
         .attr("r", 15)
         .classed("stateCircle", true);
 
-    var circlesText
+    var circlesText = circlesGroup.append("text")
+        .text(d => d.abbr)
+        .attr("dx", d => xLinearScale(d[chosenXaxis]))
+        .attr("dy", d => yLinearScale(d[chosenYaxis])+5)
+        .classed("stateText", true);
 })
