@@ -189,4 +189,11 @@ d3.csv("assets/data/data.csv").then(function(data, err) {
 
     var yAxis = chartGroup.append("g")
         .call(leftAxis);
+
+    var circlesGroup = chartGroup.selectAll("circle")
+        .data(data)
+        .enter()
+        .append("g");
+
+    
 })
