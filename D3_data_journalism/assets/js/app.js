@@ -44,3 +44,15 @@ function yScale(data, chosenYaxis) {
 
     return yLinearScale;
 }
+
+
+function renderXaxes(newXScale, xAxis) {
+    var bopttomAxis = d3.axisBottom(newXScale);
+
+    xAxis.transition()
+        .duration(1000)
+        .call(bottomAxis);
+
+        return xAxis;
+}
+
