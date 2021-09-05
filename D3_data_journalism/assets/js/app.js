@@ -29,8 +29,18 @@ function xScale(data, chosenXaxis) {
 
     var xLinearScale = d3.scaleLinear()
         .domain([d3.min(data, d => d[chosenXaxis]) * 0.9,
-    d3.max(data, d => d[chosenXaxis]) * 1.1
-    ]).range([0, width]);
+        d3.max(data, d => d[chosenXaxis]) * 1.1])
+        .range([0, width]);
 
     return xLinearScale;
+}
+
+function yScale(data, chosenYaxis) {
+
+    var yLinearScale = d3.scaleLinear()
+        .domain([d3.min(data, d => d[chosenYaxis]) - 2,
+        d3.max(data, d => d[chosenYaxis]) + 2])
+        .range([height, 0]);
+
+    return yLinearScale;
 }
