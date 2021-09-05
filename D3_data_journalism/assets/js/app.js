@@ -129,4 +129,17 @@ function updateToolTip(chosenXaxis, chosenYaxis, circlesGroup) {
     else if (chosenYaxis === "smokes") {
         ylabel = "Smokes: ";
     }
+
+    var toolTip = d3.tip()
+        .attr("class", "tooltip")
+        .offset([80, 60])
+        .style("color", "black")
+        .style("background", "white")
+        .style("border", "solid")
+        .style("border-width", "1px")
+        .style("border-radius", "5px")
+        .style("padding", "5px")
+        .html(function(d) {
+            return (`${d.state}<br>${xlabel + d[chosenXaxis]}%<br>${ylabel + d[chosenYaxis]}%`);
+        });
 })
