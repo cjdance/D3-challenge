@@ -181,5 +181,12 @@ d3.csv("assets/data/data.csv").then(function(data, err) {
     var yLinearScale = yScale(data, chosenYaxis);
 
     var bottomAxis = d3.axisBottom(xLinearScale);
-    varleftAxis = d3.axisLeft(yLinearScale);
+    var leftAxis = d3.axisLeft(yLinearScale);
+
+    var xAxis = chartGroup.append("g")
+        .attr("transform", `translate(0, ${height})`)
+        .call(bottomAxis);
+
+    var yAxis = chartGroup.append("g")
+        .call(leftAxis);
 })
