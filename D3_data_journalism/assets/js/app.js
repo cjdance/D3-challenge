@@ -13,4 +13,7 @@ const margin = {
 const width = svgWidth - margin.left - margin.right;
 const height = svgHeight - margin.top - margin.bottom;
 
-
+const svg = d3.select("#scatter")
+    .append("svg")
+    .attr("width", svgWidth)
+    .attr("heighyt", svgHeight + 40);
